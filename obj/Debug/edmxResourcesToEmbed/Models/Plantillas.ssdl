@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CONTACTOSModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'CONTACTOS.dbo.Plantillas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Plantillas">
+    <Key>
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Contenido" />
+    </Key>
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contenido" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CONTACTOSModel1StoreContainer">
+    <EntitySet Name="Plantillas" EntityType="Self.Plantillas" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Plantillas].[Nombre] AS [Nombre], 
+    [Plantillas].[Contenido] AS [Contenido]
+    FROM [dbo].[Plantillas] AS [Plantillas]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

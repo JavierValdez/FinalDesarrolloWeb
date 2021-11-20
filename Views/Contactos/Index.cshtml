@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EXAMEN_FINAL1.Models.CONTACTO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Destinatarios</h2>
+
+<p>
+    <div class="btn-sm">
+        @Html.ActionLink("AGREGAR CONTACTO", "Agregar")
+    </div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TELEFONO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRECCION)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TELEFONO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIRECCION)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.ID }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+    <button type="button" style="border-style:solid; background-color:gainsboro" class="btn">@Html.ActionLink("Continuar", "EnvioFinaliza", "Plantilla")</button>
+    
+</p>

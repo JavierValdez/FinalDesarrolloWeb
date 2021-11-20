@@ -1,0 +1,17 @@
+﻿@model EXAMEN_FINAL1.Models.Plantilla
+
+@{
+    ViewBag.Title = "EnvioFinaliza";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{Html.BeginForm("CreateDocument", "Plantilla", FormMethod.Get);
+    {
+        <div>
+            <input type="submit" value="Crear PDF" style="margin-top: 5vw; width: 150px; height: 27px" />
+        </div>
+    }
+    Html.EndForm();
+}
